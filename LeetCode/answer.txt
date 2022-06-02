@@ -22,8 +22,14 @@ Code:
 -------------------
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # take a hashmap
         num_set = {}
+        
+        #for loop through the list with enumerate
+        
         for num_index, num in enumerate(nums):
+            # Check the (taget - vaule) answer is present in the hashmap or not
             if (target-num) in num_set:
                 return [num_set[target-num], num_index]
+            # add the value and index in the hashmap
             num_set[num] = num_index            
