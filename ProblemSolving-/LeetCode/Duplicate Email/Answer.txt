@@ -1,0 +1,6 @@
+
+In SQL their is group by key word which is use to find out the that specific column's have same name or num and having count show the more then 1 file data only show.
+
+Answer:
+# Write your MySQL query statement below
+select email from Person group by email having count(*) > 1;

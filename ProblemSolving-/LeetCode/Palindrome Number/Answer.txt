@@ -1,0 +1,11 @@
+Answer:
+
+Reverse the numer and match with the given number
+
+Code:
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        passNumber = x
+        newNumber = str(passNumber)[::-1]
+        return str(passNumber) == newNumber
+        

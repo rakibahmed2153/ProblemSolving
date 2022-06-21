@@ -1,0 +1,4 @@
+I have used the inner join to join the same table to get the manager salary and details then use the condition to find out the prefered one.
+
+# Write your MySQL query statement below
+select emp.name as Employee from Employee emp INNER JOIN Employee mp ON emp.managerId = mp.id where emp.salary > mp.salary
