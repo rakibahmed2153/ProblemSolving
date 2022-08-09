@@ -1,8 +1,0 @@
-use left join with the order table and give a condition where customer id not in the column.
-
-
-Answer:
-# Write your MySQL query statement below
-Select cm.name as Customers from Customers cm
-left join Orders ord on ord.customerId = cm.id
-where ord.customerId is null;
