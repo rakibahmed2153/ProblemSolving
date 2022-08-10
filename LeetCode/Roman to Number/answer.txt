@@ -1,0 +1,28 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        romanList = {
+            "I" : 1,
+            "V" : 5,
+            "X" : 10,
+            "L" : 50,
+            "C" : 100,
+            "D" : 500,
+            "M" : 1000,
+        }
+        
+        result = 0
+        
+        # start from the last index so find out the last index number
+        
+        totalLength = len(s)
+        lastIndex   = totalLength - 1
+        
+        # loop throught the total string before -1
+        
+        while lastIndex >= 0:
+            if lastIndex < totalLength - 1 and romanList[s[lastIndex]] < romanList[s[lastIndex + 1]]:
+                 result -= romanList[s[lastIndex]]
+            else:
+                 result += romanList[s[lastIndex]]
+            lastIndex -= 1
+        return result    
