@@ -1,0 +1,30 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+            # Have a dummey list first
+            dummy = ListNode()
+            tail = dummy
+            
+            # loop through the whole list till one list is not become null
+            while list1 and list2:
+                # check which value is smaller take that value
+                if list1.val < list2.val:
+                    tail.next = list1
+                    list1 = list1.next
+                    
+                else:
+                    tail.next = list2
+                    list2 = list2.next
+                tail = tail.next     
+            
+            # if list 2 is empty then take only first list remainning whole date
+            # else if list 1 is empty then take only second list memainning whole date
+            tail.next = list1 if list1 else list2
+        
+            return dummy.next
+                
+            
