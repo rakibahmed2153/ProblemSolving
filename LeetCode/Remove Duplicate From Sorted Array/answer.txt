@@ -1,0 +1,23 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        
+        #check if the array is empty or not
+        if len(nums) == 0:
+            return 0
+        
+        #Take pointer on the first element that will increse when both elements are not matched
+        slowpointer = 0
+        
+        #Loop to through the whole nums and fast pointer should move to last one by one
+        for fastpointer in range(1, len(nums)):
+            
+            #check if both index value are not matched or not
+            if nums[fastpointer] != nums[slowpointer]:
+                
+                #if not matched the slow pointer will increase forward
+                slowpointer += 1
+                
+                #Change the value fast pointer value to second pointer
+                nums[slowpointer] = nums[fastpointer]
+        
+        return slowpointer + 1        
