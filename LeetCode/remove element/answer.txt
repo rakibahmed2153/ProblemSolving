@@ -1,0 +1,26 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        # nums is null then return - 0
+        if len(nums) == 0:
+            return 0
+        
+        #take a variable that will return the counter length
+        k = 0
+        
+        #look through the whole nums and find out the value
+        
+        for i in range(len(nums)):
+            #check if the nums values are mathches with the val
+            #if match then skip
+            #else increase k and swaped value 
+            
+            if nums[i] != val:
+                nums[k] = nums[i]
+                k += 1
+        return k     
+        
+        # =========second way============
+        
+        # for i,j in enumerate(sorted(nums)): 
+        #     if j==val: nums.remove(j)
+        # return len(nums)
