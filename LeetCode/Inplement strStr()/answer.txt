@@ -1,0 +1,11 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        # check needle is emplty or not
+        if not needle:
+            return 0
+        # Loop through the whole haystack
+        for i in  range(len(haystack)):
+            #check needle len and starting index value match with needle 
+            if haystack[i: i+len(needle)] == needle:
+                return i
+        return -1    
