@@ -1,0 +1,10 @@
+def addDigits(num):
+    while num > 9:
+        sum = 0
+        while num:
+            # It will take the last value of the number
+            sum += num % 10
+            # Remove the last value and take remaining value of the number
+            num = num // 10
+        num = sum
+    return num
