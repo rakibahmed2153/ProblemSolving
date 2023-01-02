@@ -1,0 +1,16 @@
+class Solution:
+    def countDigits(self, num: int) -> int:
+        temp = num
+        count = 0
+        while temp != 0:
+
+            # Fetching each digit
+            # of the number
+            d = temp % 10
+            temp //= 10
+
+            # Checking if digit is greater
+            # than 0 and can divides n.
+            if d > 0 and num % d == 0:
+                count += 1
+        return count
